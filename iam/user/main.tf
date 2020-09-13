@@ -1,5 +1,5 @@
-resource "aws_iam_user" "admin-miyahana" {
-  name = "admin-miyahana"
+resource "aws_iam_user" "admin-kanata" {
+  name = "admin-kanata"
   path = "/"
   force_destroy = true
   tags = {

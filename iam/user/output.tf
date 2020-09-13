@@ -1,5 +1,5 @@
 output "users" {
   value = {
-    (aws_iam_user.admin-miyahana.name) = aws_iam_user.admin-miyahana,
+    (aws_iam_user.admin-kanata.name) = aws_iam_user.admin-kanata,
   }
 }
