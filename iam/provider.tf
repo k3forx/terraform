@@ -1,6 +1,6 @@
 provider "aws" {
   region                  = "ap-northeast-1"
   shared_credentials_file = "~/.aws/credentials"
-  profile                 = "kanata"
+  profile                 = "admin-miyahana"
   version                 = "2.62"
 }
