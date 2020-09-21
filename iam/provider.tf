@@ -1,6 +1,3 @@
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-
 provider "aws" {
   # shared_credentials_file = "~/.aws/credentials"
   # profile                 = "admin-kanata"
