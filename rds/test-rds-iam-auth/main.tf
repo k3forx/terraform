@@ -34,7 +34,7 @@ resource "aws_db_instance" "test-rds-iam-auth" {
   max_allocated_storage = 25
   storage_type          = "gp2"
 
-  username = "admin_kanata"
+  username                   = "admin_kanata"
   multi_az                   = false
   publicly_accessible        = true
   auto_minor_version_upgrade = false
@@ -58,4 +58,23 @@ resource "aws_db_instance" "test-rds-iam-auth" {
   }
 
   tags = local.tags
+}
+
+provider "mysql" {
+  endpoint = "test-rds-iam-auth.caa2bd2defxp.ap-northeast-1.rds.amazonaws.com"
+  username = "admin_kanata"
+  password = "dummypassword" # <- we need to write password...
+}
+
+resource "mysql_user" "lambda-role-for-rds" {
+  user        = "lambda-role-for-rds"
+  host        = "%"
+  auth_plugin = "AWSAuthenticationPlugin"
+}
+
+resource "mysql_grant" "lambda-role-for-rds" {
+  user       = "lambda-role-for-rds"
+  host       = "%"
+  database   = "lag_cv"
+  privileges = ["SELECT"]
 }

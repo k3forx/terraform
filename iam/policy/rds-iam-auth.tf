@@ -2,7 +2,7 @@ data "aws_iam_policy_document" "allow-connect-to-RDS-doc" {
   statement {
     effect    = "Allow"
     actions   = ["rds-db:connect"]
-    resources = ["arn:aws:rds-db:ap-northeast-1:411479233930:dbuser:db-4LJNQIAXQZBUL3F54L2J6HDHHQ/lambda_role_for_rds"]
+    resources = ["arn:aws:rds-db:ap-northeast-1:411479233930:dbuser:db-377INWEWIC24TKWVCEGOFM6KCI/lambda-role-for-rds"]
   }
 }
 
